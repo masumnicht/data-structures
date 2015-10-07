@@ -5,7 +5,7 @@ var Queue = function() {
   var storage = {};
 
   // Implement the methods below
-
+  var length = 0;
   someInstance.enqueue = function(value) {
   };
 
@@ -13,6 +13,7 @@ var Queue = function() {
   };
 
   someInstance.size = function() {
+    return length;
   };
 
   return someInstance;
