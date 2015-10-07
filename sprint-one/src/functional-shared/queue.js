@@ -15,13 +15,7 @@ queueMethods.size = function() {
 
 queueMethods.enqueue = function(value) {
   for(var i = this.length; i >= 0; i--) {
-    //this[this.length] = this[this.length-1] === undefined ? value : this[this.length-1];
-    if(this[this.length-1] !== undefined) {
-      this[this.length] = this[this.length-1]
-    } else {
-      
-      this[this.length] = value;
-    }
+    this[i] = this[i-1] === undefined ? value : this[i-1]; 
   }
   this.length++;
 }
