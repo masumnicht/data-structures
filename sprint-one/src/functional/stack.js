@@ -6,9 +6,13 @@ var Stack = function() {
   var length = 0;
   // Implement the methods below
   someInstance.push = function(value) {
+    length++;
   };
 
   someInstance.pop = function() {
+    if(length>0){
+      length--;
+    }
   };
 
   someInstance.size = function() {
