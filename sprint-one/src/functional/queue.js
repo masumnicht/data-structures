@@ -7,6 +7,7 @@ var Queue = function() {
   // Implement the methods below
   var length = 0;
   someInstance.enqueue = function(value) {
+    console.log(this);
     for(var i=length;i>=0;i--){
       storage[i] = storage[i-1]===undefined ? value : storage[i-1]
     }
