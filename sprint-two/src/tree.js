@@ -1,5 +1,6 @@
 var Tree = function(value) {
   var newTree = {};
+  _.extend(newTree, treeMethods);
   newTree.value = value;
 
   // your code here
