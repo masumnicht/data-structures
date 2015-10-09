@@ -26,8 +26,14 @@ searchTreemethods.insert = function (value) {
 }
 }
 
-searchTreemethods.contains = function (value) {
+searchTreemethods.contains = function (target) {
   current = this;
+  while(current !== null) {
+  if(current.value === target) {
+    return true;
+  } else if (target )
+   }
+
 }
 
 searchTreemethods.depthFirstLog = function () {
