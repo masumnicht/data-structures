@@ -66,33 +66,55 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 // ------------------------
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
-  _.each(this.nodes, function (item, index) {
-    if(item.value === fromNode && item.edges.indexOf(toNode) ) {
-      _.each(item.edges, function (element, index) {
-        console.log(items.edges);
-        if(element === toNode) {
-          item.edges.splice(index, 1);
-          index--;
-        }
-      })
+
+   for(var i = 0 ; i < this.nodes.length; i++) {
+    if(this.nodes[i].value === fromNode && this.nodes[i].edges.indexOf(toNode) !== -1) {
+     for(var j = 0; j < this.nodes[i].edges.length; j++) {
+            if(this.nodes[i].edges[j] === toNode) {
+                this.nodes[i].edges.splice(j, 1)
+    // //     //     console.log(this.nodes[i].edges)
+                }
+       }
     }
-  })
-  _.each(this.nodes, function (item, index) {
-    if(item.value === toNode && item.edges.indexOf(fromNode) ) {
-      _.each(item.edges, function (element, index) {
-        console.log(items.edges);
-        if(element === fromNode) {
-          item.edges.splice(index, 1);
-          index--;
-        }
-      })
+  }
+  
+    for(var k = 0 ; k < this.nodes.length; k++) {
+    if(this.nodes[k].value === toNode && this.nodes[k].edges.indexOf(fromNode) !== -1) {
+     for(var h = 0; h < this.nodes[k].edges.length; h++) {
+            if(this.nodes[k].edges[h] === fromNode) {
+                this.nodes[k].edges.splice(h, 1)
+    // //     //     console.log(this.nodes[i].edges)
+                }
+       }
     }
-  })
+  }
+  // _.each(this.nodes, function (item, index) {
+  //   if(item.value === fromNode && item.edges.indexOf(toNode) !== -1) {
+  //     _.each(item.edges, function (element, index) {
+  //       if(element === toNode) {
+  //         item.edges.splice(index, 1);
+  //         index--;
+  //       }
+  //     })
+  //   }
+  // })
+  // _.each(this.nodes, function (item, index) {
+  //   if(item.value === toNode && item.edges.indexOf(fromNode) !== -1 ) {
+  //     _.each(item.edges, function (element, index) {
+  //       if(element === toNode) {
+  //         item.edges.splice(index, 1);
+  //         index--;
+  //       }
+  //     })
+  //   }
 };
 
 // ------------------------
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
+  _.each(this.nodes, function (item) {
+    cb(item.value);
+  })
 };
 
 /*
