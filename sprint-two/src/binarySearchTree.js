@@ -8,31 +8,34 @@ var BinarySearchTree = function(value) {
 var searchTreemethods = {};
 
 searchTreemethods.insert = function (value) {
-    var inserted = false;
-    var current = this;
-    while(!inserted) {
+  var inserted = false;
+  var current = this;
+  while(!inserted) {
     if(value < current.value ) {
-        if(current.left === null ) { 
-            current.left = BinarySearchTree(value);
-            inserted = true;
-    }  else{ current = current.left }
-} else if (value > current.value) {
-     if(current.right === null ) { 
-            current.right = BinarySearchTree(value);
-            inserted = true;
+      if(current.left === null ) { 
+        current.left = BinarySearchTree(value);
+        inserted = true;
+      } else { 
+        current = current.left;
+      }
+    } else if (value > current.value) {
+      if(current.right === null ) { 
+        current.right = BinarySearchTree(value);
+        inserted = true;
+      } else { 
+        current = current.right;
+      }
     }
-    else{ current = current.right }
-}
-}
+  }
 }
 
 searchTreemethods.contains = function (target) {
-  current = this;
-  while(current !== null) {
-  if(current.value === target) {
-    return true;
-  } else if (target )
-   }
+  // current = this;
+  // while(current !== null) {
+  // if(current.value === target) {
+  //   return true;
+  // } else if (target )
+  //  }
 
 }
 
