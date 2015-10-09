@@ -71,7 +71,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
     if(this.nodes[i].value === fromNode && this.nodes[i].edges.indexOf(toNode) !== -1) {
      for(var j = 0; j < this.nodes[i].edges.length; j++) {
             if(this.nodes[i].edges[j] === toNode) {
-                this.nodes[i].edges.splice(j, 1)
+                this.nodes[i].edges.splice(j, 1);
     // //     //     console.log(this.nodes[i].edges)
                 }
        }
@@ -82,7 +82,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
     if(this.nodes[k].value === toNode && this.nodes[k].edges.indexOf(fromNode) !== -1) {
      for(var h = 0; h < this.nodes[k].edges.length; h++) {
             if(this.nodes[k].edges[h] === fromNode) {
-                this.nodes[k].edges.splice(h, 1)
+                this.nodes[k].edges.splice(h, 1);
     // //     //     console.log(this.nodes[i].edges)
                 }
        }

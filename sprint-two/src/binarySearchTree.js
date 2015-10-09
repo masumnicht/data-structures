@@ -30,17 +30,30 @@ searchTreemethods.insert = function (value) {
 }
 
 searchTreemethods.contains = function (target) {
-  // current = this;
-  // while(current !== null) {
-  // if(current.value === target) {
-  //   return true;
-  // } else if (target )
-  //  }
-
+  var current = this;
+  while(current !== null) {
+    if(current.value === target) {
+      return true;
+    } else if (target < current.value) { 
+      current = current.left;
+    } else if (target > current.value) {
+      current = current.right;
+    }
+  }
+  return false;
 }
 
-searchTreemethods.depthFirstLog = function () {
-  
+searchTreemethods.depthFirstLog = function (cb) {
+  var current = this;
+    if(current) {
+    cb(current.value);
+    if(current.left !== null) {
+    current.left.depthFirstLog(cb);
+    }
+  if(current.right !== null) {
+    current.right.depthFirstLog(cb);
+    }
+  }
 }
 /*
  * Complexity: What is the time complexity of the above functions?
